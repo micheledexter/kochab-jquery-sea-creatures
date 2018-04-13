@@ -11,5 +11,25 @@
 </head>
 <body>
     <h1>Kochab jQuery Sea Creatures</h1>
+    <!-- <button id="counterButton">Add Sea Creature</button> -->
+    <span id="totalCount">Total Count</span><br>
+    <input type="text" id="creatureName" placeholder="Name" value="Orca">
+    <input type="number" id="creatureSize" placeholder="Size" value="300">
+    <input type="text" id="creatureType" placeholder="Type" value="Dolphin">
+    <input type="number" id="creatureSpeed" placeholder="Speed" value="25">
+    <button id="submitCreature">Add Sea Creature to Table</button>
+    <table id="creatureTable" width="800px">
+        <thead>
+            <tr>
+                <th width="25%">Name</th>
+                <th width="25%">Size</th>
+                <th width="25%">Type</th>
+                <th width="25%">Speed</th>
+            </tr>
+        </thead>
+        <tbody id="creatures">
+
+        </tbody>
+    </table>
 </body>
 </html>

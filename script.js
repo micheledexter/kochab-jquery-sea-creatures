@@ -1,16 +1,37 @@
 console.log('js');
 
+let clickCount = 0;
+
 $(document).ready(readyNow);
 
 function readyNow() {
 	console.log('JQ');
-	
-	// use jQuery to create 'button' and 'input' elements
-	$('body').append('<button id="counterButton">Add one</button><input id="counterInput" value="0" disabled="disabled">');
 
-	// set up an event handler for when the button is clicked for an anonymous callback function
-	$('#counterButton').on('click', function() {
-		// a complicated way of basically saying "input's value = itself + 1"
-		$('#counterInput').val(parseInt($('#counterInput').val()) + 1);
-	});
+	// set up an event handler for when the button is clicked for a callback function 'clickHandler'
+	// $('#counterButton').on('click', clickHandler);
+	$('#submitCreature').on('click', addNewCreature);
+	updateDomCount();
+}
+
+// function clickHandler() {
+// 	clickCount++;
+// 	console.log('Button clicked: ' + clickCount);
+// 	updateDomCount();
+// }
+
+function updateDomCount() {
+	$('#totalCount').text('Total Count: ' + clickCount);
+}
+
+function addNewCreature() {
+	clickCount++;
+	$('#creatures').append(
+		'<tr>' +
+			'<td>' + $('#creatureName').val() + '</td>' +
+			'<td>' + $('#creatureSize').val() + ' ft</td>' +
+			'<td>' + $('#creatureType').val() + '</td>' +
+			'<td>' + $('#creatureSpeed').val() + ' mph</td>' +
+		'</tr>'
+	);
+	updateDomCount();
 }
